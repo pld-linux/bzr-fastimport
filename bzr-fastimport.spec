@@ -1,13 +1,13 @@
 Summary:	Bzr plugin for fast loading of data from other VCS tools
 Name:		bzr-fastimport
-Version:	0.12.0
+Version:	0.13.0
 Release:	1
 Group:		Development/Languages
 # Some modules in the exporters/ subdir are MIT-licensed.
 License:	GPL v2+ and MIT
 URL:		https://launchpad.net/bzr-fastimport
 Source0:	http://launchpad.net/bzr-fastimport/trunk/%{version}/+download/%{name}-%{version}.tar.gz
-# Source0-md5:	be4e2b4b82adab83341d2a606de5ca27
+# Source0-md5:	e47115774d44ae0c3b027ae0374aa52e
 BuildRequires:	bzr
 BuildRequires:	python-distribute
 Requires:	bzr
@@ -56,7 +56,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{py_sitescriptdir}/bzrlib/plugins/fastimport
 %{py_sitescriptdir}/bzrlib/plugins/fastimport/*.py[co]
-%dir %{py_sitescriptdir}/bzrlib/plugins/fastimport/exporters
-%{py_sitescriptdir}/bzrlib/plugins/fastimport/exporters/*.py[co]
 %dir %{py_sitescriptdir}/bzrlib/plugins/fastimport/processors
 %{py_sitescriptdir}/bzrlib/plugins/fastimport/processors/*.py[co]
