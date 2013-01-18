@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc COPYING.txt NEWS README.txt
+%doc NEWS README.txt
 %{py_sitescriptdir}/bzr_fastimport-*.egg-info
 
 %dir %{py_sitescriptdir}/bzrlib
