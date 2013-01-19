@@ -8,6 +8,7 @@ License:	GPL v2+ and MIT
 URL:		https://launchpad.net/bzr-fastimport
 Source0:	http://launchpad.net/bzr-fastimport/trunk/%{version}/+download/%{name}-%{version}.tar.gz
 # Source0-md5:	e47115774d44ae0c3b027ae0374aa52e
+Patch0:		bug-1101776.patch
 BuildRequires:	bzr
 BuildRequires:	python-distribute
 Requires:	bzr
@@ -27,6 +28,7 @@ custom migration solution.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__python} setup.py build
@@ -40,7 +42,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %py_postclean
 
-# not interested of tests at runtime
+# not interested to package tests at runtime
 %{__rm} -r $RPM_BUILD_ROOT%{py_sitescriptdir}/bzrlib/plugins/fastimport/tests
 
 %clean

@@ -1,0 +1,23 @@
+--- bzr-fastimport-0.13.0/user_mapper.py~	2013-01-19 14:01:00.135642260 +0200
++++ bzr-fastimport-0.13.0/user_mapper.py	2013-01-19 14:01:47.191146251 +0200
+@@ -43,16 +44,16 @@
+             line = line.strip()
+             if len(line) == 0 or line.startswith('#'):
+                 continue
+-            old, new = line.split('=', 1)
+-            old = old.strip()
+-            new = new.strip()
++
++            old = "=".join(line.split('=')[:-1]).strip()
++            new = "=".join(line.split('=')[-1:]).strip()
+             if old == '@':
+                 self._default_domain = new
+                 continue
+             # Parse each id into a name and email address
+             old_name, old_email = self._parse_id(old)
+             new_name, new_email = self._parse_id(new)
+-            #print "found user map: %s => %s" % ((old_name, old_email), (new_name, new_email))
++            #print >> sys.stderr, "found user map: %s => %s" % ((old_name, old_email), (new_name, new_email))
+             self._user_map[(old_name, old_email)] = (new_name, new_email)
+ 
+     def _parse_id(self, id):
