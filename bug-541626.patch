@@ -1,0 +1,19 @@
+disable graphing
+https://bugs.launchpad.net/bzr/+bug/541626
+
+minimal testcase from
+https://github.com/termie/git-bzr-ng/issues/38
+
+=== modified file 'revision_store.py'
+--- revision_store.py	2012-01-10 08:48:02 +0000
++++ revision_store.py	2012-11-03 22:06:31 +0000
+@@ -170,7 +170,7 @@
+         """
+         self.repo = repo
+         self._graph = None
+-        self._use_known_graph = True
++        self._use_known_graph = False
+         self._supports_chks = getattr(repo._format, 'supports_chks', False)
+ 
+     def expects_rich_root(self):
+
