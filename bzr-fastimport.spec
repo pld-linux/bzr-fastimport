@@ -5,9 +5,9 @@ Release:	2
 Group:		Development/Languages
 # Some modules in the exporters/ subdir are MIT-licensed.
 License:	GPL v2+ and MIT
-URL:		https://launchpad.net/bzr-fastimport
 Source0:	http://launchpad.net/bzr-fastimport/trunk/%{version}/+download/%{name}-%{version}.tar.gz
 # Source0-md5:	e47115774d44ae0c3b027ae0374aa52e
+URL:		https://launchpad.net/bzr-fastimport
 Patch0:		bug-1101776.patch
 Patch1:		bug-541626.patch
 BuildRequires:	bzr
