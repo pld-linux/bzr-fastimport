@@ -33,11 +33,11 @@ custom migration solution.
 %patch1 -p0
 
 %build
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install \
+%py_install \
 	-O2 \
 	--skip-build \
 	--root $RPM_BUILD_ROOT
